@@ -1,0 +1,39 @@
+How it works:
+To choose which variable goes to the top we use Entropy (how much information you miss, 
+If the sample is completely homogeneous the entropy is zero and if the sample is equally 
+divided then it has entropy of one) + Information gain:
+1- Entropy(P) = -SUM(p(X)log2p(X))
+2- Entropy(P,Q) = SUMQ(p(q)Entropy(q))
+3- IG(O,P) = Entropy(O)-Entropy(O,P)
+
+example:
+A   B    Z
+a   v    y
+b   v    n
+a   v    y
+
+E(A)=-(p(a)logp(a)+p(b)logp(b))
+    =-(2/3log(2/3)+1/3log(1/3))
+E(B)=-(p(v)logp(v))
+    = -1log(1)
+    = 0
+E(Z)=-(p(y)logp(y)+p(n)logp(n))
+    =-(2/3log(2/3)+1/3log(1/3))
+
+IG(Z,A)> IG(Z,B)
+
+Advantages:
+- Extremely fast at classifying unknown records
+- Easy to interpret for small-sized trees
+- Excludes unimportant features
+Disadvantage:
+- Easy to overfit
+- Small changes in the training data can result 
+  in large changes to decision logic.
+When to use it?
+-
+
+Links: 
+1- https://www.youtube.com/watch?v=7VeUPuFGJHk
+2- https://towardsdatascience.com/decision-tree-classification-de64fc4d5aac
+3- https://medium.com/@rishabhjain_22692/decision-trees-it-begins-here-93ff54ef134
